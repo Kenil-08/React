@@ -4,7 +4,7 @@ function App() {
   return (
     <>
       <Kenil/>
-      <h1>I am entering in thw world of React.</h1>
+      <h1>I am entering in the world of React.</h1>
     </>   
   );
 }
