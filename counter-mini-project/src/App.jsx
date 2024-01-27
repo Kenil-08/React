@@ -1,4 +1,4 @@
-// This min Project allow you to increase/decrease between 0 to 20.
+// This mini Project allow you to increase/decrease between 0 to 20.
 
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
