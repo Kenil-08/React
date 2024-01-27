@@ -2,12 +2,15 @@ import './App.css'
 import Card from './components/card'
 
 function App() {
-  let name;
+  let name={
+    firstname:"Kenil",
+    lastname:"Kanani"
+  };
   let btnText;
   return (
     <>
-      <Card name="About Macbook 2" btnText="Book Now"/>
-      <Card name='About Dell' btnText='Visit Now'/>
+      <Card name={name.firstname} btnText="Book Now"/>
+      <Card name='About Dell' btnText={name.lastname}/>
     </>
   )
 }
