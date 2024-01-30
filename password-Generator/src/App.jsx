@@ -2,36 +2,34 @@ import { useEffect, useRef } from "react";
 import { useCallback, useState } from "react";
 
 function App() {
-  const [length,setLength] = useState(8);
-  const [password,setPassword] = useState("");
-  const [numberAllowed,setnumberAllowed] = useState(true);
-  const [charAllowed,setcharAllowed] = useState(false);
+  const [length, setLength] = useState(8);
+  const [password, setPassword] = useState("");
+  const [numberAllowed, setnumberAllowed] = useState(true);
+  const [charAllowed, setcharAllowed] = useState(false);
 
   const passwordRef = useRef(null);
 
-  const copyPassword = useCallback(()=>{
+  const copyPassword = useCallback(() => {
     passwordRef.current?.select();
     window.navigator.clipboard.writeText(password);
-  },[password])
+  }, [password]);
 
-  const passwordGenerator =useCallback(()=>{
+  const passwordGenerator = useCallback(() => {
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-    if(numberAllowed)
-        str += "0123456789";
-    if(charAllowed)
-        str += "@#$&*_";
+    if (numberAllowed) str += "0123456789";
+    if (charAllowed) str += "@#$&*_";
 
     for (let i = 1; i <= length; i++) {
       let char = Math.floor(Math.random() * str.length + 1);
       pass += str.charAt(char);
     }
     setPassword(pass);
-  },[length,numberAllowed,charAllowed,setPassword]);
+  }, [length, numberAllowed, charAllowed, setPassword]);
 
-  useEffect(()=>{
+  useEffect(() => {
     passwordGenerator();
-  },[length,numberAllowed,charAllowed,passwordGenerator])
+  }, [length, numberAllowed, charAllowed, passwordGenerator]);
 
   return (
     <>
@@ -47,7 +45,10 @@ function App() {
             readOnly
           />
 
-          <button onClick={copyPassword} className="outline-none bg-blue-700 hover:bg-blue-600 text-white px-3 py-0.5 shrink-0">
+          <button
+            onClick={copyPassword}
+            className="outline-none bg-blue-700 hover:bg-blue-600 text-white px-3 py-0.5 shrink-0"
+          >
             copy
           </button>
         </div>
@@ -58,8 +59,8 @@ function App() {
               min={6}
               max={20}
               value={length}
-              onChange={(e)=>{
-                setLength(e.target.value)
+              onChange={(e) => {
+                setLength(e.target.value);
               }}
               className="cursor-pointer"
             />
@@ -71,8 +72,8 @@ function App() {
               type="checkbox"
               defaultChecked={numberAllowed}
               id="numberInput"
-              onChange={(e)=>{
-                setnumberAllowed((prev) => !prev)
+              onChange={(e) => {
+                setnumberAllowed((prev) => !prev);
               }}
             />
             <label>Numbers</label>
@@ -82,8 +83,8 @@ function App() {
               type="checkbox"
               defaultChecked={charAllowed}
               id="charInput"
-              onChange={(e)=>{
-                setcharAllowed((prev) => !prev)
+              onChange={(e) => {
+                setcharAllowed((prev) => !prev);
               }}
             />
             <label>Characters</label>
