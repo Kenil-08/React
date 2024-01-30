@@ -47,7 +47,7 @@ function App() {
             readOnly
           />
 
-          <button onClick={copyPassword} className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0">
+          <button onClick={copyPassword} className="outline-none bg-blue-700 hover:bg-blue-600 text-white px-3 py-0.5 shrink-0">
             copy
           </button>
         </div>
