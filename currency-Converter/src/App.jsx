@@ -1,6 +1,7 @@
 import { useState } from "react";
 import InputBox from "./components/InputBox";
 import useCurrencyInfo from "./hooks/useCurrencyInfo";
+import backgroundImage from "./images/bg-img.jpg";
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
   
   const currencyInfo = useCurrencyInfo(from);
   const options = Object.keys(currencyInfo);
-
+  // const imageURL = `https://images.pexels.com/photos/164527/pexels-photo-164527.jpeg`;
   const swap = () =>{
     setTo(from);
     setFrom(to);
@@ -26,9 +27,15 @@ function App() {
   return (
     <>
       <div
-        className="w-full h-screen flex flex-wrap justify-center item-center bg-cover bg-no-repeat"
-        style={{ backgroundImage: `none` }}
+        className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
+        style={{
+          backgroundImage: `url(${backgroundImage})`
+        }}
       >
+        <div
+        className="absolute inset-0 bg-black/30"
+        style={{ backdropFilter: 'blur(7px)' }}
+        ></div>
         <div className="w-full">
           <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
             <form
