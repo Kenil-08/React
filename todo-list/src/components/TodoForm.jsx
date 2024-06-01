@@ -10,7 +10,7 @@ function TodoForm() {
 
         if(!todo) return;
 
-        addTodo({todo,completed:false});
+        addTodo({id:Date.now(),todo:todo,completed:false});
         setTodo("");
     }
 
