@@ -1,8 +1,15 @@
+/* Apply full height to the root container */
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
+  min-height: 100vh; /* Ensures full height coverage */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+  background-color: white; /* Sets the background color to white */
+  color: black; /* Sets the text color to black */
 }
 
 .logo {
@@ -12,10 +19,10 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #000000aa); /* Adjusted shadow to black */
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #000000aa); /* Adjusted shadow to black */
 }
 
 @keyframes logo-spin {
@@ -35,8 +42,12 @@
 
 .card {
   padding: 2em;
+  background-color: black; /* Sets the background color to black */
+  color: white; /* Sets the text color to white */
+  border-radius: 8px; /* Adds rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
 }
 
 .read-the-docs {
-  color: #888;
+  color: black; /* Adjusted text color to black */
 }
