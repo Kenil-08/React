@@ -2,15 +2,6 @@
 
 This project is a modern blog website built using React, Redux, and Appwrite. It allows users to create, edit, and delete blog posts, as well as read posts created by others. The application is designed with a focus on performance and user experience.
 
-## Table of Contents
-
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Configuration](#configuration)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Features
 
 - **User Authentication**: Secure user login and registration.
@@ -26,7 +17,7 @@ To get started with the project, follow these steps:
 1. **Clone the repository**:
     ```bash
     git clone https://github.com/Kenil-08/blog-website.git
-    cd blog-site
+    cd blog-website
     ```
 
 2. **Install dependencies**:
